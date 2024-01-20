@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    tools:context=".Home">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/card_stack_view"
+        android:src="@drawable/fy"
+        android:layout_marginTop="27dp"
+        />
+
+    <com.yuyakaido.android.cardstackview.CardStackView
+        android:id="@+id/card_stack_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        tools:listitem="@layout/flat_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintBottom_toTopOf="@id/dislike"/>
+
+        <ProgressBar
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/progressBar"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintBottom_toTopOf="@id/dislike"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dislike"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:background="@drawable/dislike_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/like"
+        android:layout_marginBottom="20dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/dislike"
+        app:layout_constraintRight_toRightOf="@+id/dislike"
+        app:layout_constraintBottom_toBottomOf="@id/dislike"
+        app:layout_constraintTop_toTopOf="@+id/dislike"
+        android:src="@drawable/dislike_logo"
+        android:elevation="10dp" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/like"
+        android:layout_width="71dp"
+        android:layout_height="71dp"
+        android:background="@drawable/like_button"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/dislike"
+        android:layout_marginBottom="20dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/like"
+        app:layout_constraintRight_toRightOf="@+id/like"
+        app:layout_constraintBottom_toBottomOf="@id/like"
+        app:layout_constraintTop_toTopOf="@+id/like"
+        android:src="@drawable/like_logo"
+        android:elevation="10dp"
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
